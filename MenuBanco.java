@@ -25,7 +25,7 @@ public class MenuBanco {
 
            switch(opcao){
             case 1:
-                menus.CriarConta();                      
+                menus.CriarConta(gerente);                      
                  break;
             case 2:
                 menus.Sacar(gerente);
@@ -37,7 +37,7 @@ public class MenuBanco {
                  
                  break;
             case 5:
-                banco.Saldo();      
+                 gerente.Saldo();      
                  break;
            }
 

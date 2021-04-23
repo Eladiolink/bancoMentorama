@@ -2,7 +2,7 @@ public abstract class  Conta {
     private int numero;
     private int agencia;
     private String banco;
-    protected double saldo;
+    protected double saldo = 0;
 
 
 

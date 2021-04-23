@@ -4,8 +4,8 @@ public class Menus {
     Gerente gerente = new Gerente(); 
     Banco banco = new Banco();
 
-    public void CriarConta(){
-        Gerente gerente = new Gerente(); 
+    public void CriarConta(Gerente gerente){
+        
 
         Scanner cliente=new Scanner(System.in);
         System.out.print("Digite o nome do Cliente: ");

@@ -2,17 +2,11 @@ public class Banco{
   
   protected String NomeCliente;
   private Double Saldo;
-  private ContaPoupanca ContaPoupanca;
-  private ContaCorrente ContaCorrente;
-  private ContaSalario  ContaSalario;
+  protected ContaPoupanca ContaPoupanca;
+  protected ContaCorrente ContaCorrente;
+  protected ContaSalario  ContaSalario;
   
 
-  public Double getSaldo(){
-     return this.Saldo;
-  }
-  public void setSaldo(){
-     this.Saldo = getSaldo();
-  }
 
   public String getNomeCliente(){
       return this.NomeCliente;
@@ -66,8 +60,23 @@ public class Banco{
       this.ContaCorrente.depositar(valor);
       System.out.println(this.ContaCorrente.getSaldo());
    }
-   public void Saldo(){
-   System.out.println("Saldo de todos: " + Saldo);
+
+   public Double Saldo(){
+     Double saldo = 0.0;
+     
+     if(ContaPoupanca != null ){
+      saldo += ContaPoupanca.getSaldo();
+     }
+
+     if(ContaCorrente != null ){
+      saldo += ContaCorrente.getSaldo();
+     }
+
+     if(ContaSalario != null ){
+      saldo += ContaSalario.getSaldo();
+     }
+      
+     return saldo;
    }
 
 
