@@ -117,6 +117,7 @@ public class Gerente{
 
    public void SacarSalario(String nome){
     
+
     for( Banco conta : this.contas ){
          
         if( conta.getNomeCliente().equals(nome) ){
@@ -127,6 +128,18 @@ public class Gerente{
             conta.SacarContaSalario(valor);
         }
        
+
+
+   }
+
+    private String BuscarPessoa(String nome){
+        for (ArrayList<Banco> conta:conta){
+        if(this.conta.getNomeCliente().equals(nome)){
+                  return this.conta.getNomeCliente();
+             }
+        }
+    }
+
 
      }
 
