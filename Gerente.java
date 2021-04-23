@@ -97,15 +97,12 @@ public class Gerente{
 
    }
 
-    private int BuscarPessoa(String nome){
-             
-         for(int i=0 ;i < this.contas.size() ; i++ ){
-                       
-             if(this.contas.get(i).getNomeCliente().equals(nome)){
-                  return i;
+    private String BuscarPessoa(String nome){
+        for (ArrayList<Banco> conta:conta){
+        if(this.conta.getNomeCliente().equals(nome)){
+                  return this.conta.getNomeCliente();
              }
         }
-        return-1;
     }
 
 
