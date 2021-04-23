@@ -2,20 +2,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Gerente{
-
-
+    
+     
     protected ArrayList<Banco> contas=new ArrayList<>();
     int numeroDeConta=1000001;
         
-
+    
     public void CriarConta(String nome){
         Banco banco=new Banco();
         banco.setNomeCliente(nome);       
         contas.add(banco);
+        System.out.print(contas.size());
+       
     }
 
-
     public void CriarContaPoupanca(String nome){
+        
          int indice=BuscarPessoa(nome);
         
          Scanner cliente=new Scanner(System.in);
@@ -24,6 +26,7 @@ public class Gerente{
 
          System.out.print("Digite o dia do seu Aniversário: ");
          int dia= cliente.nextInt();
+ 
  
         this.contas.get(indice).CriarContaPoupanca(this.numeroDeConta,1776,"Nubank",saldo,dia,0.05);
 
@@ -80,9 +83,7 @@ public class Gerente{
     Scanner cliente=new Scanner(System.in);
     System.out.print("Digite o quanto quer Sacar: ");
     Double valor= cliente.nextDouble();
-    this.contas.get(indice).SacarContaCorrente(valor);
-    
-    
+    this.contas.get(indice).SacarContaCorrente(valor);   
 
    }
 
@@ -144,8 +145,11 @@ public class Gerente{
 
 
     }
+
    
+
     
 }
+
 
 
