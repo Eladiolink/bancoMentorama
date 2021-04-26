@@ -1,7 +1,6 @@
 public class Banco{
   
   protected String NomeCliente;
-  private Double Saldo;
   protected ContaPoupanca ContaPoupanca;
   protected ContaCorrente ContaCorrente;
   protected ContaSalario  ContaSalario;

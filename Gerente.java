@@ -127,24 +127,8 @@ public class Gerente{
             Double valor= cliente.nextDouble();
             conta.SacarContaSalario(valor);
         }
-       
-
-
-   }
-
-    private String BuscarPessoa(String nome){
-        for (ArrayList<Banco> conta:conta){
-        if(this.conta.getNomeCliente().equals(nome)){
-                  return this.conta.getNomeCliente();
-             }
-        }
     }
-
-
-     }
-
-   }
-
+} 
 
     public void DepositarPoupanca(String nome){
         for( Banco conta : this.contas ){
@@ -206,9 +190,20 @@ public class Gerente{
          }
 
     }
+    public  void ContasCadastradas(){
+        for( Banco conta : this.contas ){
+            System.out.println(conta.getNomeCliente());
 
+            System.out.println(conta.Saldo());
     
-}
+        }
+        
+        
+
+        }
+    }
+    
+
 
 
 

@@ -2,7 +2,6 @@ import java.util.Scanner;
 public class MenuBanco {
 
     public static void main (String[] args){  
-        Banco banco = new Banco();
         Menus menus = new Menus();
         Gerente gerente = new Gerente();
 
@@ -16,7 +15,8 @@ public class MenuBanco {
             System.out.println("   |3.|  Depositar                   |");
             System.out.println("   |4.|  Transferir valores          |");
             System.out.println("   |5.|  Mostrar montante nas contas |");
-            System.out.println("   |6.|  Sair                        |");
+            System.out.println("   |6.|  Contas Cadastradas          |");
+            System.out.println("   |7.|  Sair                        |");
             System.out.println("------------------------------");
 
             Scanner menu=new Scanner(System.in);
@@ -39,11 +39,22 @@ public class MenuBanco {
             case 5:
                  gerente.Saldo();      
                  break;
+
+            case 6:
+                  gerente.ContasCadastradas();
+               break; 
+            case 7:
+                  System.out.println("Você saiu do nosso programa");
+                break;    
+            default: 
+                System.out.println("Opção inválida");
+                break;
            }
 
 
+
            
-        }while(opcao<6);   
+        }while(opcao<7);   
         
         
     }
