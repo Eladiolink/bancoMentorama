@@ -2,6 +2,7 @@ public abstract class  Conta {
     private int numero;
     private int agencia;
     private String banco;
+
     protected double saldo = 0;
 
 
@@ -30,6 +31,7 @@ public abstract class  Conta {
     public void setBanco(String banco) {
         this.banco = banco;
     }
+   
 
     public abstract double getSaldo();
 

@@ -192,13 +192,13 @@ public class Gerente{
     }
     public  void ContasCadastradas(){
         for( Banco conta : this.contas ){
-            System.out.println(conta.getNomeCliente());
+            System.out.println("       | PESSOAS CADASTRADAS |");
+            System.out.println("Nome: " + conta.getNomeCliente() + " |  Saldo da conta: " + conta.Saldo());  
+        }       
+      }
 
-            System.out.println(conta.Saldo());
-    
-        }
-        
-        
+        public void Transferencia(){
+            
 
         }
     }
