@@ -8,7 +8,7 @@ public class ContaPoupanca extends Conta{
         this.taxaDeJuros = taxaDeJuros;
     }
 
-    public double getSaldo(){
+    public Double getSaldo(){
             return this.saldo + this.taxaDeJuros*this.saldo;
 
     }

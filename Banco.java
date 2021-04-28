@@ -55,7 +55,7 @@ public class Banco{
       System.out.println(this.ContaSalario.getSaldo());
    }
     
-   public void DepositarContaCorrente(double valor){
+   public void DepositarContaCorrente(Double valor){
       this.ContaCorrente.depositar(valor);
       System.out.println(this.ContaCorrente.getSaldo());
    }

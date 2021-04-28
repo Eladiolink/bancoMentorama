@@ -1,4 +1,4 @@
-public class ContaSalario extends Conta {
+public class ContaSalario extends Conta implements Tributavel {
     private int limite;
 
     public ContaSalario (int numero, int agencia, String banco, double saldo, int limite) {
@@ -8,17 +8,13 @@ public class ContaSalario extends Conta {
     
     
 
-    public double getSaldo() {
+    public Double getSaldo() {
         return this.saldo;
 
     }
 
-    public void depositar(double valor) {
-        this.saldo += valor;
-
-    }
-
-    public void Sacar(double valor) {
+    @Override
+    public void Sacar(Double valor) {
         if (this.limite == 0) {
             System.out.println("Atingiu o valor máximo de saque");           
             }
@@ -28,7 +24,17 @@ public class ContaSalario extends Conta {
             this.saldo -= valor;
         }     
          
-        }
+     }
+        
+    
+
+
+
+    @Override
+    public void depositar(Double valor) {
+        this.saldo += valor;
+        
+    }
     
         
     }
