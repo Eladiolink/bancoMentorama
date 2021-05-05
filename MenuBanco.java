@@ -34,7 +34,7 @@ public class MenuBanco {
                 menus.Depositar(gerente);
                  break;
             case 4:
-                 
+                 menus.transferencia(gerente);
                  break;
             case 5:
                  gerente.Saldo();      

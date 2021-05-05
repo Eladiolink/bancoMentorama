@@ -23,11 +23,21 @@ public class ContaPoupanca extends Conta{
         else {
             this.saldo-=valor;
 
-        }
-        
-        
-
+        }              
     }
+
+    public void transferirPoupanca(Conta destino, Double valor){
+        if(valor > this.getSaldo()){
+            System.out.println("Saldo indisponivel");
+        }
+        else{
+            this.saldo -= valor;
+            destino.saldo += valor;
+
+        }
+      
+    }
+
 
 
 	

@@ -123,5 +123,32 @@ public class Menus {
         for(int i=0;i<tamanho;i++){
           System.out.println(gerente.contas.get(i).getNomeCliente());
         }
-}}
-   
+}
+    public void transferencia(Gerente gerente){
+        Scanner cliente=new Scanner(System.in);
+        System.out.print("Digite o seu nome : ");
+        String nome= cliente.nextLine();
+
+        
+        int opcao=0;
+        do{
+
+            System.out.println("------------------------------");
+            System.out.println("   *** Transação ***  ");
+            System.out.println("   |1.|     Transferencia          |");       
+            System.out.println("   |4.|  Voltar ao Menu Principal  |");
+            System.out.println("------------------------------");
+
+            Scanner menu=new Scanner(System.in);
+            System.out.print("Digite o Tipo de Conta: ");
+            opcao= menu.nextInt();
+
+         switch(opcao){
+            case 1:
+                gerente.transferencia(nome);
+
+         } 
+        }while(opcao<2);
+    }
+    }
+ 

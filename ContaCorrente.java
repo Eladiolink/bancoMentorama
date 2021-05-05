@@ -43,9 +43,20 @@ public class ContaCorrente extends Conta implements Tributavel {
     public Double getSaldo() {
         return (this.chequeEspecial + this.saldo);
         
-        
+
+     }
+
+     public void transferirCorrente(Conta destino, Double valor){
+        this.saldo -= valor;
+        destino.saldo += valor;
+    }
+
+     
+
+    
+    
     }
 
 
  
-}
+

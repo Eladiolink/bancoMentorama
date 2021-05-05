@@ -6,6 +6,7 @@ public class Gerente{
      
     protected ArrayList<Banco> contas=new ArrayList<>();
     int numeroDeConta=1000001;
+    
         
     
     public void CriarConta(String nome){
@@ -191,17 +192,46 @@ public class Gerente{
 
     }
     public  void ContasCadastradas(){
-        for( Banco conta : this.contas ){
-            System.out.println("       | PESSOAS CADASTRADAS |");
+        System.out.println("       | PESSOAS CADASTRADAS |");
+        for( Banco conta : this.contas ){         
             System.out.println("Nome: " + conta.getNomeCliente() + " |  Saldo da conta: " + conta.Saldo());  
         }       
       }
+    public void transferencia(String nome){
+        
+       for ( Banco conta : this.contas )
+        if( conta.getNomeCliente().equals(nome) ){
 
-        public void Transferencia(){
+            Scanner cliente=new Scanner(System.in);
+            System.out.println("Digite o quanto quer transferir: ");
+            Double valor= cliente.nextDouble();
             
 
-        }
+            System.out.println("Digite a conta de origem:");
+            String p = cliente.nextLine();
+            
+            
+
+            System.out.println("Digite o nome da conta de transferencia:");
+            String p1 = cliente.nextLine();
+            
+
+           
+            
+
+
+
+
     }
+   
+  }
+}
+    
+
+        
+    
+  
+
     
 
 

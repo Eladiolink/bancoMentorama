@@ -57,4 +57,22 @@ public abstract class  Conta {
                 ", saldo=" + saldo +
                 '}';
     }
+
+    public void transferencia(Conta destino, Double valor){
+        if(valor > this.getSaldo()){
+            System.out.println("Saldo indisponivel");
+        }
+        else{
+            this.saldo -= valor;
+            destino.saldo += valor;
+
+        }
+    
+    }
+
+
+   
+
+
+
 }
