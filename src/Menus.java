@@ -135,29 +135,20 @@ public class Menus {
         int opcao=0;
         do{
 
-            System.out.println("------------------------------");
-            System.out.println("   *** Transação ***  ");
+            System.out.println("------------------------------    ");
+            System.out.println("          *** Transação ***       ");
             System.out.println("   |1.|     Transferencia          |");       
-            System.out.println("   |4.|  Voltar ao Menu Principal  |");
+            System.out.println("   |2.|  Voltar ao Menu Principal  |");
             System.out.println("------------------------------");
 
             Scanner menu=new Scanner(System.in);
             System.out.print("Digite o Tipo de Conta: ");
             opcao= menu.nextInt();
 
-         switch(opcao){
-            case 1:
-                
-                Scanner transferencia = new Scanner(System.in);              
-                System.out.println("Digite a conta de Destino:");
-                String conta = transferencia.nextLine();
+    switch(opcao){
+        case 1:
 
-                System.out.println("Digite o valor de transferencia:");
-                Double transferir = transferencia.nextDouble();
-
-
-                gerente.transferencia(conta , transferir, nome);
-                break;
+        break;
 
          } 
         }while(opcao<2);

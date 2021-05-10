@@ -3,10 +3,11 @@ public class ContaPoupanca extends Conta{
     private int diaAniversario;
     private double taxaDeJuros;
 
-    public ContaPoupanca(int numero, int agencia, String banco, double saldo, int diaAniversario, double taxaDeJuros, double transferir){
+    public ContaPoupanca(int numero, int agencia, String banco, double saldo, int diaAniversario, double taxaDeJuros ){
         super(numero, agencia, banco, saldo);
         this.diaAniversario = diaAniversario;
         this.taxaDeJuros = taxaDeJuros;
+
     }
 
     public Double getSaldo(){
@@ -27,14 +28,16 @@ public class ContaPoupanca extends Conta{
         }              
     }   
       
-    @Override
-    public Double getTransferir(){
-        return (this.transferir);
-
+    public void Transferir(Conta destino, Double valor){
+        if(valor > this.getSaldo()){
+            System.out.println("Saldo indisponivel");
+        }
+        else{
+            this.saldo -= valor;
+            destino.saldo += valor;
+                       
+        }
        
     }
-
-
-
 	
 }

@@ -3,7 +3,7 @@ package src;
 public class ContaCorrente extends Conta implements Tributavel {
     private double chequeEspecial;
 
-    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial, double transferir) {
+    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial) {
         super(numero, agencia, banco, saldo);
         this.chequeEspecial = chequeEspecial;
     }
@@ -48,11 +48,20 @@ public class ContaCorrente extends Conta implements Tributavel {
 
      }
     @Override
-     public Double getTransferir(){
-         return (this.transferir);
+    public void transferir(Conta destino, Double valor) {
+        if(valor > this.getSaldo()){
+            System.out.println("Saldo indisponivel");
+        }
+        else{
+            this.saldo -= valor;
+            destino.saldo += valor;
+                       
+        }
 
+    }   
+}
         
-     }
+    
 
 
 
@@ -61,7 +70,7 @@ public class ContaCorrente extends Conta implements Tributavel {
 
     
     
-    }
+    
 
 
  

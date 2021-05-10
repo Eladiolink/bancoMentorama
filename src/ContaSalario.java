@@ -34,26 +34,23 @@ public class ContaSalario extends Conta implements Tributavel {
         
     }
 
-  
-    public void transferirSalario(Conta destino, Double valor){
+
+
+    @Override
+    public void transferir(Conta destino,Double valor) {
         if(valor > this.getSaldo()){
             System.out.println("Saldo indisponivel");
         }
         else{
             this.saldo -= valor;
             destino.saldo += valor;
-
+                       
         }
-    
+ 
     }
 
 
-    @Override
-    public Double getTransferir() {
-        return (this.transferir);       
-    
-
-       
+  
         
     }
 
@@ -61,5 +58,5 @@ public class ContaSalario extends Conta implements Tributavel {
 
     
     
-}
+
 

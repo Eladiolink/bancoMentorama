@@ -1,13 +1,11 @@
 package src;
-import javax.swing.text.StringContent;
+
 
 public abstract class  Conta {
     private int numero;
     private int agencia;
     private String banco;
-
     protected double transferir;
-
     protected double saldo = 0;
 
 
@@ -62,21 +60,12 @@ public abstract class  Conta {
                 ", saldo=" + saldo +
                 '}';
     }
-    public Double getTransferir(){
-        return transferir;
-    }
     
-    public void setTransferir(Conta destino, Double valor){           
-        if(valor > this.getSaldo()){
-            System.out.println("Saldo indisponivel");
-        }
-        else{
-            this.saldo -= valor;
-            destino.saldo += valor;
-                       
-        }
 
     }
+
+
+
 
     
 
@@ -85,4 +74,4 @@ public abstract class  Conta {
 
 
 
-}
+

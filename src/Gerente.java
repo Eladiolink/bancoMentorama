@@ -74,6 +74,8 @@ public class Gerente{
             System.out.println("Digite a quantidades de saques mensais");
             int saques= cliente.nextInt();
 
+
+
             conta.CriarContaSalario(this.numeroDeConta,3232,"Nubank",saldo,saques);
             this.numeroDeConta++;
         }
@@ -194,44 +196,35 @@ public class Gerente{
 
     }
     public  void ContasCadastradas(){
+
         System.out.println("       | PESSOAS CADASTRADAS |");
         for( Banco conta : this.contas ){         
             System.out.println("Nome: " + conta.getNomeCliente() + " |  Saldo da conta: " + conta.Saldo() + " |  Número de conta:  " + numeroDeConta);  
         }       
       }
-    public void transferencia(String destino, Double valor, String nome){
-        
-       for ( Banco conta : contas ){
-        if( conta.getNomeCliente().equals(nome) ){   
-            if(conta.getNomeCliente().equals(destino)){
-                conta.transferir(destino, valor);
+    
+    
+      public void transferir(String destino, Double valor,String nome){
+        for(Banco conta : contas){
+            if(conta.getNomeCliente().equals(nome)){
+                if(conta.getNomeCliente().equals(destino)){
+                    conta.transferir(nome, destino, valor);
+
+                }
                 
-                
+              
 
             }
-           
+        }
 
-
-
-
-       }
-             
-
-          
-            
-
-       
-
-
-
-
+    }
 
     }
    
-  }
+  
 
 
-}
+
     
 
         

@@ -8,9 +8,6 @@ public class Banco{
   protected Conta transferir;
 
 
-  
-  
-  
 
   public String getNomeCliente(){
       return this.NomeCliente;
@@ -23,11 +20,11 @@ public class Banco{
 
   
   public void CriarContaPoupanca(int numero, int agencia, String banco, double saldo, int diaAniversario, double taxaDeJuros){
-    this.ContaPoupanca=new ContaPoupanca(numero, agencia,banco,saldo,diaAniversario,taxaDeJuros, taxaDeJuros);
+    this.ContaPoupanca=new ContaPoupanca(numero, agencia,banco,saldo,diaAniversario,taxaDeJuros);
   }
  
   public void CriarContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial){
-    this.ContaCorrente=new ContaCorrente(numero,agencia,banco,saldo,chequeEspecial, chequeEspecial);
+    this.ContaCorrente=new ContaCorrente(numero,agencia,banco,saldo,chequeEspecial);
   }
 
    public void CriarContaSalario(int numero, int agencia, String banco, double saldo, int limite){
@@ -65,16 +62,12 @@ public class Banco{
       System.out.println(this.ContaCorrente.getSaldo());
    }
 
-   public void transferir(String destino, Double valor){
-      this.transferir(destino, valor);
+   public void transferir(String nome, String destino, Double valor){
+      this.transferir(nome,destino, valor);
 
    }
  
-   
 
-
-
-  
 
    public Double Saldo(){
      Double saldo = 0.0;
