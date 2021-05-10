@@ -1,3 +1,5 @@
+package src;
+
 public class ContaSalario extends Conta implements Tributavel {
     private int limite;
 
@@ -44,6 +46,19 @@ public class ContaSalario extends Conta implements Tributavel {
         }
     
     }
+
+
+    @Override
+    public Double getTransferir() {
+        return (this.transferir);       
+    
+
+       
+        
+    }
+
+
+
     
     
 }

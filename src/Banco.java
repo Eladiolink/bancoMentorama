@@ -1,11 +1,16 @@
+package src;
 public class Banco{
   
   protected String NomeCliente;
   protected ContaPoupanca ContaPoupanca;
   protected ContaCorrente ContaCorrente;
   protected ContaSalario  ContaSalario;
-  
+  protected Conta transferir;
 
+
+  
+  
+  
 
   public String getNomeCliente(){
       return this.NomeCliente;
@@ -18,11 +23,11 @@ public class Banco{
 
   
   public void CriarContaPoupanca(int numero, int agencia, String banco, double saldo, int diaAniversario, double taxaDeJuros){
-    this.ContaPoupanca=new ContaPoupanca(numero, agencia,banco,saldo,diaAniversario,taxaDeJuros);
+    this.ContaPoupanca=new ContaPoupanca(numero, agencia,banco,saldo,diaAniversario,taxaDeJuros, taxaDeJuros);
   }
  
   public void CriarContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial){
-    this.ContaCorrente=new ContaCorrente(numero,agencia,banco,saldo,chequeEspecial);
+    this.ContaCorrente=new ContaCorrente(numero,agencia,banco,saldo,chequeEspecial, chequeEspecial);
   }
 
    public void CriarContaSalario(int numero, int agencia, String banco, double saldo, int limite){
@@ -59,6 +64,17 @@ public class Banco{
       this.ContaCorrente.depositar(valor);
       System.out.println(this.ContaCorrente.getSaldo());
    }
+
+   public void transferir(String destino, Double valor){
+      this.transferir(destino, valor);
+
+   }
+ 
+   
+
+
+
+  
 
    public Double Saldo(){
      Double saldo = 0.0;

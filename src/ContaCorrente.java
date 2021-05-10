@@ -1,7 +1,9 @@
+package src;
+
 public class ContaCorrente extends Conta implements Tributavel {
     private double chequeEspecial;
 
-    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial) {
+    public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial, double transferir) {
         super(numero, agencia, banco, saldo);
         this.chequeEspecial = chequeEspecial;
     }
@@ -45,11 +47,15 @@ public class ContaCorrente extends Conta implements Tributavel {
         
 
      }
+    @Override
+     public Double getTransferir(){
+         return (this.transferir);
 
-     public void transferirCorrente(Conta destino, Double valor){
-        this.saldo -= valor;
-        destino.saldo += valor;
-    }
+        
+     }
+
+
+
 
      
 

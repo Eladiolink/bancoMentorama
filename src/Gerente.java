@@ -1,14 +1,15 @@
+package src;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import src.Conta;
 public class Gerente{
     
      
     protected ArrayList<Banco> contas=new ArrayList<>();
-    int numeroDeConta=1000001;
-    
-        
-    
+
+    int numeroDeConta= 10000001;
+
+ 
     public void CriarConta(String nome){
         Banco banco=new Banco();
         banco.setNomeCliente(nome);       
@@ -26,12 +27,13 @@ public class Gerente{
                 System.out.print("Digite o saldo Inicial da Conta: ");
                 Double saldo= cliente.nextDouble();
 
+
                 System.out.print("Digite o dia do seu Aniversário: ");
                 int dia= cliente.nextInt();
  
                 conta.CriarContaPoupanca(this.numeroDeConta,1776,"Nubank",saldo,dia,0.05);
 
-                this.numeroDeConta++;
+                
             }
            
          }  
@@ -194,30 +196,32 @@ public class Gerente{
     public  void ContasCadastradas(){
         System.out.println("       | PESSOAS CADASTRADAS |");
         for( Banco conta : this.contas ){         
-            System.out.println("Nome: " + conta.getNomeCliente() + " |  Saldo da conta: " + conta.Saldo());  
+            System.out.println("Nome: " + conta.getNomeCliente() + " |  Saldo da conta: " + conta.Saldo() + " |  Número de conta:  " + numeroDeConta);  
         }       
       }
-    public void transferencia(String nome){
+    public void transferencia(String destino, Double valor, String nome){
         
-       for ( Banco conta : this.contas )
-        if( conta.getNomeCliente().equals(nome) ){
+       for ( Banco conta : contas ){
+        if( conta.getNomeCliente().equals(nome) ){   
+            if(conta.getNomeCliente().equals(destino)){
+                conta.transferir(destino, valor);
+                
+                
 
-            Scanner cliente=new Scanner(System.in);
-            System.out.println("Digite o quanto quer transferir: ");
-            Double valor= cliente.nextDouble();
-            
-
-            System.out.println("Digite a conta de origem:");
-            String p = cliente.nextLine();
-            
-            
-
-            System.out.println("Digite o nome da conta de transferencia:");
-            String p1 = cliente.nextLine();
-            
-
+            }
            
+
+
+
+
+       }
+             
+
+          
             
+
+       
+
 
 
 
@@ -225,6 +229,8 @@ public class Gerente{
     }
    
   }
+
+
 }
     
 

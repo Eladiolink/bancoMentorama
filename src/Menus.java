@@ -1,3 +1,4 @@
+package src;
 import java.util.Scanner;
 public class Menus {
 
@@ -125,6 +126,7 @@ public class Menus {
         }
 }
     public void transferencia(Gerente gerente){
+
         Scanner cliente=new Scanner(System.in);
         System.out.print("Digite o seu nome : ");
         String nome= cliente.nextLine();
@@ -145,7 +147,17 @@ public class Menus {
 
          switch(opcao){
             case 1:
-                gerente.transferencia(nome);
+                
+                Scanner transferencia = new Scanner(System.in);              
+                System.out.println("Digite a conta de Destino:");
+                String conta = transferencia.nextLine();
+
+                System.out.println("Digite o valor de transferencia:");
+                Double transferir = transferencia.nextDouble();
+
+
+                gerente.transferencia(conta , transferir, nome);
+                break;
 
          } 
         }while(opcao<2);
