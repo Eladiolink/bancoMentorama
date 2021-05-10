@@ -62,12 +62,47 @@ public class Banco{
       System.out.println(this.ContaCorrente.getSaldo());
    }
 
-   public void transferir(String nome, String destino, Double valor){
-      this.transferir(nome,destino, valor);
+   public void transferir( Double valor, Integer tipoDeConta ,String operacao){
+      String sacar="sacar";
+      String depositar="depositar";
+
+
+      if(sacar.equals(operacao)){
+        switch(tipoDeConta){
+             case 1:
+               this.ContaPoupanca.Sacar(valor);
+             break;
+             case 2:
+               this.ContaCorrente.Sacar(valor);
+             break;
+             case 3:
+               this.ContaSalario.Sacar(valor);
+             break;
+             default:
+             System.out.println("Nenhuma Opção encontrada");
+        }
+      }
+
+      if(depositar.equals(operacao)){
+         switch(tipoDeConta){
+              case 1:
+                this.ContaPoupanca.depositar(valor);
+              break;
+              case 2:
+                this.ContaCorrente.depositar(valor);
+              break;
+              case 3:
+                this.ContaSalario.depositar(valor);
+              break;
+              default:
+              System.out.println("Nenhuma Opção encontrada");
+         }
+       }
+
+
+
 
    }
- 
-
 
    public Double Saldo(){
      Double saldo = 0.0;
@@ -87,9 +122,6 @@ public class Banco{
      return saldo;
 
    }
-  
-
-
 
 
 }
